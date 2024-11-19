@@ -1,2 +1,99 @@
-public static void main
-//test
+package programacion.ut2.proyecto2;
+
+import java.util.Scanner;
+
+public class proyecto2 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //Definición de variables
+        int operacion, num1, num2, suma, resta, multi, division, raiz, resultado;
+        double resultadoD, n1, n2;
+        //Creamos un menú para elegir la operación deseada
+        System.out.println("Estas son las operaciones disponibles:");
+        System.out.println("1.Suma");
+        System.out.println("2.Resta");
+        System.out.println("3.Multiplicación");
+        System.out.println("4.División");
+        System.out.println("5.Raiz Cuadrada");
+
+        System.out.println("Seleccione operación");
+        operacion = sc.nextInt();
+        //Decimos al programa que en caso de escoger un caso u otro nos realice una operación
+        switch (operacion) {
+            case 1:
+                System.out.println("Escriba el primer número");
+                num1 = sc.nextInt();
+                System.out.println("Escriba el segundo número");
+                num2 = sc.nextInt();
+                resultado = num1 + num2;
+                System.out.println("El resultado es: " + resultado);
+                if (num1 > num2) {
+                    System.out.println("El mayor es " + num1);
+                } else {
+                    System.out.println("El mayor es " + num2);
+                }
+                break;
+            case 2:
+                System.out.println("Escriba el primer número");
+                num1 = sc.nextInt();
+                System.out.println("Escriba el segundo número");
+                num2 = sc.nextInt();
+                resultado = num1 - num2;
+                System.out.println("El resultado es: " + resultado);
+                if (num1 > num2) {
+                    System.out.println("El mayor es " + num1);
+                } else {
+                    System.out.println("El mayor es " + num2);
+                }
+                break;
+
+            case 3:
+                System.out.println("Escriba el primer número");
+                num1 = sc.nextInt();
+                System.out.println("Escriba el segundo número");
+                num2 = sc.nextInt();
+                resultado = num1 * num2;
+                System.out.println("El resultado es: " + resultado);
+                if (num1 > num2) {
+                    System.out.println("El mayor es " + num1);
+                } else {
+                    System.out.println("El mayor es " + num2);
+                }
+                break;
+
+            case 4:
+                System.out.println("Escriba el primer número");
+                n1 = sc.nextDouble();
+                System.out.println("Escriba el segundo número");
+                n2 = sc.nextDouble();
+                resultadoD = n1 / n2;
+                System.out.println("El resultado es: " + resultadoD);
+                break;
+
+            case 5:
+                System.out.println(notas(num1,num2));
+                break;
+        }
+    }
+    
+    public static double notas(double n1, double n2, double n3, double media,
+            int mediaconversion) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escriba la nota del primer trimestre");
+        n1 = sc.nextDouble();
+        
+        System.out.println("Escriba la nota del segundo trimestre");
+        n2 = sc.nextDouble();
+        
+        System.out.println("Escriba la nota del tercer trimestre");
+        n3 = sc.nextDouble();
+        
+        media = (n1 + n2 + n3) / 3;
+        System.out.println("Nota boletín: " + media);
+        mediaconversion = (int)media;
+        System.out.println("Nota Expediente académico: " + mediaconversion);
+         
+    } 
+
+}
