@@ -1,24 +1,22 @@
-package programacion.ut2.proyecto2;
-
-import java.util.Random;
+package programacion.ut2;
 
 import java.util.Scanner;
 
-public class proyecto2 {
+public class proyecto {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
-       
+
         //Se definen las variables
-        int  seguir, operacion, num1, num2, suma1, suma2, resta, multi, division, raizcuadrada, resultado, nota;
+        int seguir, operacion, num1, num2, suma1, suma2, resultado, nota;
         double n1, n2, resultadoD;
         int numAciertos = 0, sumaUsuario, i;
 
-        /**Usamos un do while para que la el programa no termine hasta que el 
+        /**
+         * Usamos un do while para que la el programa no termine hasta que el
          * usuario lo decida
          */
-        do{
+        do {
             System.out.println("Elige una operación:");
             System.out.println("1.Suma");
             System.out.println("2.Resta");
@@ -29,110 +27,126 @@ public class proyecto2 {
             System.out.println("7.Saber nota");
             System.out.println("8.Preguntas random");
             System.out.println("9.Números primos");
+            System.out.println("10.Suma hasta un número");
             operacion = sc.nextInt();
             //Se inserta la funcion "switch" para que para cada caso realice una operación
-        switch (operacion) {
+            switch (operacion) {
 
-            //Se realiza una suma con los numeros que inserte el usuario
-            case 1:
-                System.out.println("Escriba el primer número");
-                num1 = sc.nextInt();
-                System.out.println("Escriba el segundo número");
-                num2 = sc.nextInt();
-                resultado = num1 + num2;
-                System.out.println("El resultado es: " + resultado);
-                break;
-                
-
-            //Se restan los numeros que escribe el  usuario
-            case 2:
-                System.out.println("Escriba el primer número");
-                num1 = sc.nextInt();
-                System.out.println("Escriba el segundo número");
-                num2 = sc.nextInt();
-                resultado = num1 - num2;
-                System.out.println("El resultado es: " + resultado);
-                break;
-
-            //Se realiza una multiplicación entre los numeros insertados por el usuario
-            case 3:
-                System.out.println("Escriba el primer número");
-                num1 = sc.nextInt();
-                System.out.println("Escriba el segundo número");
-                num2 = sc.nextInt();
-                resultado = num1 * num2;
-                System.out.println("El resultado es: " + resultado);
-                break;
-
-            //Hace una división entre los dos nnuemros que se le piden al usuario
-            case 4:
-                System.out.println("Escriba el primer número");
-                n1 = sc.nextDouble();
-                System.out.println("Esriba el segundo número");
-                n2 = sc.nextDouble();
-                resultadoD = n1 / n2;
-                System.out.println("El resultado es: " + resultadoD);
-                break;
-
-            //Hace una raíz cuadrada entre los numeros   
-            case 5:
-                System.out.println("Escriba el primer número");
-                n1 = sc.nextDouble();
-                System.out.println("Escriba el segundo número");
-                n2 = sc.nextDouble();
-                resultadoD = Math.sqrt(n1 + n2);
-                System.out.println("El resultado es: " + resultadoD);
-                break;
-
-            //Este caso llama a la función "notas", para calcular la media de 3 notas
-            case 6:
-                int nosabernota;
-                notas();
-                
-                System.out.println("Si no deseas saber coomo se te ha evaluado "
-                        + "pulsa 1");
-                nosabernota = sc.nextInt();
-                
-                if (nosabernota == 1){
+                //Se realiza una suma con los numeros que inserte el usuario
+                case 1:
+                    System.out.println("Escriba el primer número");
+                    num1 = sc.nextInt();
+                    System.out.println("Escriba el segundo número");
+                    num2 = sc.nextInt();
+                    resultado = num1 + num2;
+                    System.out.println("El resultado es: " + resultado);
                     break;
-                }
-                    
 
-            //Este caso llama a la función "Nota", para saber que nota tiene el usuario
-            case 7:
-                System.out.println("Introduce tu nota del 1 al 10:");
-                nota = sc.nextInt();
-                Nota(nota);
-                break;
+                //Se restan los numeros que escribe el  usuario
+                case 2:
+                    System.out.println("Escriba el primer número");
+                    num1 = sc.nextInt();
+                    System.out.println("Escriba el segundo número");
+                    num2 = sc.nextInt();
+                    resultado = num1 - num2;
+                    System.out.println("El resultado es: " + resultado);
+                    break;
 
-            case 8:
+                //Se realiza una multiplicación entre los numeros insertados por el usuario
+                case 3:
+                    System.out.println("Escriba el primer número");
+                    num1 = sc.nextInt();
+                    System.out.println("Escriba el segundo número");
+                    num2 = sc.nextInt();
+                    resultado = num1 * num2;
+                    System.out.println("El resultado es: " + resultado);
+                    break;
 
-                //Función "do while" para que siga sumando aciertos mientras tu respuesta sea correcta
-                do {
-                    suma1 = (int) (Math.random() * 100);
-                    suma2 = (int) (Math.random() * 100);
-                    System.out.println("Escribe el resultado de: " + suma1 + " + " + suma2);
-                    sumaUsuario = sc.nextInt();
-                    numAciertos++;
-                } while (suma1 + suma2 == sumaUsuario);
-                System.out.println("Nº aciertos:" + numAciertos);
-                break;
+                //Hace una división entre los dos nnuemros que se le piden al usuario
+                case 4:
+                    System.out.println("Escriba el primer número");
+                    n1 = sc.nextDouble();
+                    System.out.println("Esriba el segundo número");
+                    n2 = sc.nextDouble();
+                    resultadoD = n1 / n2;
+                    System.out.println("El resultado es: " + resultadoD);
+                    break;
 
-            case 9:
+                //Hace una raíz cuadrada entre los numeros   
+                case 5:
+                    System.out.println("Escriba el primer número");
+                    n1 = sc.nextDouble();
+                    System.out.println("Escriba el segundo número");
+                    n2 = sc.nextDouble();
+                    resultadoD = Math.sqrt(n1 + n2);
+                    System.out.println("El resultado es: " + resultadoD);
+                    break;
 
-                //Función "for" para calcular los numeros primos de un numero n
-                for (i = 7; i < 100; i += 7) {
-                    System.out.println(i);
-                }
-                break;
-        }
+                //Este caso llama a la función "notas", para calcular la media de 3 notas
+                case 6:
+                    int nosabernota;
+                    notas();
+
+                    System.out.println("Si no deseas saber coomo se te ha evaluado "
+                            + "pulsa 1");
+                    nosabernota = sc.nextInt();
+
+                    if (nosabernota == 1) {
+                        break;
+                    }
+
+                //Este caso llama a la función "Nota", para saber que nota tiene el usuario
+                case 7:
+                    System.out.println("Introduce tu nota del 1 al 10:");
+                    nota = sc.nextInt();
+                    Nota(nota);
+                    break;
+
+                case 8:
+
+                    //Función "do while" para que siga sumando aciertos mientras tu respuesta sea correcta
+                    do {
+                        suma1 = (int) (Math.random() * 100);
+                        suma2 = (int) (Math.random() * 100);
+                        System.out.println("Escribe el resultado de: " + suma1 + " + " + suma2);
+                        sumaUsuario = sc.nextInt();
+                        numAciertos++;
+                    } while (suma1 + suma2 == sumaUsuario);
+                    System.out.println("Nº aciertos:" + numAciertos);
+                    break;
+
+                case 9:
+
+                    //Función "for" para calcular los numeros primos de un numero n
+                    for (i = 7; i < 100; i += 7) {
+                        System.out.println(i);
+                    }
+                    break;
+
+                case 10:
+                    System.out.print("Introduce un número entero positivo (n): ");
+                    num1 = sc.nextInt();
+
+                    // Validación de entrada
+                    if (num1 < 1) {
+                        System.out.println("Por favor, introduce un número positivo mayor o igual a 1.");
+                    } else {
+                        int suma = 0; // Inicializar la suma
+                        i = 1;    // Contador inicial
+
+                        // Bucle while para sumar números 
+                        while (i <= num1) {
+                            suma += i; // Añadir el valor de i a la suma
+                            i++;       // Incrementar el contador
+                        }
+
+                        System.out.println("La suma de los primeros " + num1 + " números naturales es: " + suma);
+                    }
+            }
             System.out.println("Si desea salir pulse 0");
             seguir = sc.nextInt();
         } while (seguir != 0);
 
-        
-
-        
     }
 
     /**
@@ -144,28 +158,22 @@ public class proyecto2 {
      */
     public static int Nota(int nota) {
         switch (nota) {
-            case 1, 2, 3, 4:
+            case 1, 2, 3, 4 ->
                 System.out.println("Insuficiente");
 
-                break;
-
-            case 5:
+            case 5 ->
                 System.out.println("Suficiente");
-                break;
 
-            case 6:
+            case 6 ->
                 System.out.println("Bien");
-                break;
 
-            case 7, 8:
+            case 7, 8 ->
                 System.out.println("Notable");
-                break;
 
-            case 9, 10:
+            case 9, 10 ->
                 System.out.println("Sobresaliente");
-                break;
 
-            default:
+            default ->
                 System.out.println("Error");
         }
         return nota;
@@ -196,4 +204,6 @@ public class proyecto2 {
         System.out.println("Nota boletín: " + media);
         System.out.println("Nota Expediente académico: " + mediaconversion);
     }
+}
+
 }
