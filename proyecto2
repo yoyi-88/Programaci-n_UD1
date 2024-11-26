@@ -74,11 +74,9 @@ public class proyecto2 {
 
                 //Hace una raíz cuadrada entre los numeros   
                 case 5:
-                    System.out.println("Escriba el primer número");
+                    System.out.println("Escriba el número");
                     n1 = sc.nextDouble();
-                    System.out.println("Escriba el segundo número");
-                    n2 = sc.nextDouble();
-                    resultadoD = Math.sqrt(n1 + n2);
+                    resultadoD = Math.sqrt(n1);
                     System.out.println("El resultado es: " + resultadoD);
                     break;
 
