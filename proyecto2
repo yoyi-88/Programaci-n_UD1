@@ -1,8 +1,8 @@
-package programacion.ut2;
+package programacion.ut2.proyecto2;
 
 import java.util.Scanner;
 
-public class proyecto {
+public class proyecto2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -26,7 +26,7 @@ public class proyecto {
             System.out.println("6.Calcular media");
             System.out.println("7.Saber nota");
             System.out.println("8.Preguntas random");
-            System.out.println("9.Números primos");
+            System.out.println("9.Tabla de multiplicar");
             System.out.println("10.Suma hasta un número");
             operacion = sc.nextInt();
             //Se inserta la funcion "switch" para que para cada caso realice una operación
@@ -116,9 +116,11 @@ public class proyecto {
                     break;
 
                 case 9:
+                    System.out.println("Introduzca un número");
+                    num1 = sc.nextInt();
 
                     //Función "for" para calcular los numeros primos de un numero n
-                    for (i = 7; i < 100; i += 7) {
+                    for (i = num1; i < 100; i += num1) {
                         System.out.println(i);
                     }
                     break;
